@@ -15,7 +15,7 @@
                 } else if (computerChoice === 3) {
                     return "scissors";
                 } else {
-                    return "Something went wrong...";
+                    return "Error";
                 }
                 console.log(computerChoice);
             }
@@ -27,30 +27,22 @@
 
                 if ((computerChoice === "rock" && playerSelection === "scissors") || (computerChoice === "paper" && playerSelection === "rock") || (computerChoice === "scissors" && playerSelection === "paper")) {
                     computerWins += 1;
-                    return `You lose! ${computerChoice} beats ${playerSelection}!`;
+                    /*return `You lose! ${computerChoice} beats ${playerSelection}!`;*/
+                    console.log("Computer won");
                 } else if ((computerChoice === "rock" && playerSelection === "paper") || (computerChoice === "paper" && playerSelection === "scissors") || (computerChoice === "scissors" && playerSelection === "rock")) {
                     playerWins += 1;
-                    return `You win! ${playerSelection} beats ${computerChoice}!`;
+                    console.log("You win!!!!!");
+                    /*return `You win! ${playerSelection} beats ${computerChoice}!`;*/
                 } else if (computerChoice === playerSelection) {
-                    return "TIE!"
+                    console.log("Tie!");
                 } else {
-                    return "Error";
+                    console.log("Error");
                 }
             }
 
             function game() {
                 for (let i = 0; i < 5; i++) {
                     playRound(playerSelection = prompt("Please enter rock, paper, or scissors: "), computerChoice);
-                    if ((computerChoice === "rock" && playerSelection === "scissors") || (computerChoice === "paper" && playerSelection === "rock") || (computerChoice === "scissors" && playerSelection === "paper")) {
-                        console.log("Computer won");
-                    } else if ((computerChoice === "rock" && playerSelection === "paper") || (computerChoice === "paper" && playerSelection === "scissors") || (computerChoice === "scissors" && playerSelection === "rock")) {
-                        console.log("You win!");
-                    } else if (computerChoice === playerSelection) {
-                        console.log("TIE!");
-                    } else {
-                        console.log("Error");
-                    }
-                    console.log(i);
                 }
                 
                 console.log(`Player wins : ${playerWins}    Computer wins: ${computerWins}`)
